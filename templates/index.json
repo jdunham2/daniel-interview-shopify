@@ -149,6 +149,7 @@
         "padding_bottom": 36
       }
     },
+
     "mm_test_section_BpQfyA": {
       "type": "MM-test-section",
       "blocks": {
@@ -168,6 +169,29 @@
         "mm-button-text": "",
         "mm-button-url": ""
       }
+    },
+
+    "mm_test_section_88eRCa": {
+      "type": "MM-test-section",
+      "blocks": {
+        "subheading_9iQK8b": {
+          "type": "subheading",
+          "settings": {
+            "mm-subheading": "This is subheading"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_9iQK8b"
+      ],
+      "settings": {
+        "mm-heading": "Talk about your brand",
+        "mm-textcontent": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>",
+        "mm-button-text": "Button Text",
+        "mm-button-url": "shopify:\/\/products\/sample-wood-bases",
+        "mm-image": "shopify:\/\/shop_images\/Soap-Image5.png"
+
+      }
     }
   },
   "order": [
@@ -175,6 +199,8 @@
     "rich_text_GNFTJ8",
     "featured_collection",
     "collection_list_FXHHg6",
-    "mm_test_section_BpQfyA"
+    "mm_test_section_BpQfyA",
+    "mm_test_section_88eRCa"
+
   ]
 }

@@ -15,10 +15,22 @@
     .other-styles {
         background-color: red;
     }
+     #tooltip {
+        background: #333;
+        color: white;
+        font-weight: bold;
+        padding: 4px 8px;
+        font-size: 13px;
+        border-radius: 4px;
+        display: none;
+      }
+      #tooltip[data-show]{
+        display: block;
+      }
 </style>
 <div class="mm-test-section">
     <div class="inner-conainer">
-        <h2>{{ section.settings.mm-heading }}</h2>
+        <H2>{{ section.settings.mm-heading }}</H2>
         <div class="paragraph">
             {{ section.settings.mm-textcontent }}
         </div>
@@ -28,7 +40,9 @@
             </a>
         {% endif %}
         {% for block in section.blocks %}
+
             <h2 class="section--head">{{ block.settings.mm-subheading }}</h2>
+            <div id="tooltip" role="tooltip">My tooltip</div>
         {% endfor %}
     </div>
     {% if section.settings.mm-image != blank %}
@@ -38,6 +52,32 @@
     {% endif %}
 </div>
 
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script>
+    const button = document.querySelector('.section--head');
+    const tooltip = document.querySelector('#tooltip');
+
+    const popperInstance = Popper.createPopper(button, tooltip);
+
+    function show(){
+        tooltip.setAttribute('data-show', '');
+        popperInstance.update();
+    }
+    function hide(){
+      tooltip.removeAttribute('data-show');
+    }
+    const showEvents = ['mouseenter', 'focus'];
+    const hideEvents = ['mouseleave', 'blur'];
+
+    showEvents.forEach((event) => {
+    button.addEventListener(event, show);
+    });
+
+    hideEvents.forEach((event) => {
+    button.addEventListener(event, hide);
+    });
+
+</script>
 {% schema %}
 {
     "name": "MM-test-section",
