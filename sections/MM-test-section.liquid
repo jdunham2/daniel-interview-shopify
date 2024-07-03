@@ -1,0 +1,79 @@
+<style>
+    .mm-test-section{
+        max-width: 680px;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .mm-test-section .image--wrapper img{
+        width: 100%;
+        height: auto;
+    }
+    .other-styles {
+        background-color: red;
+    }
+</style>
+<div class="mm-test-section">
+    <div class="inner-conainer">
+        <h2>{{ section.settings.mm-heading }}</h2>
+        <div class="paragraph">
+            {{ section.settings.mm-textcontent }}
+        </div>
+        {% if section.settings.mm-button-text %}
+            <a href="{{ section.settings.mm-button-url }}" >
+                {{ section.settings.mm-button-text }}
+            </a>
+        {% endif %}
+        {% for block in section.blocks %}
+            <h2 class="section--head">{{ block.settings.mm-subheading }}</h2>
+        {% endfor %}
+    </div>
+    {% if section.settings.mm-image != blank %}
+        <div class="image--wrapper">
+            <img src="{{ section.settings.mm-image | img_url: "master" }}"  />
+        </div>
+    {% endif %}
+</div>
+
+{% schema %}
+{
+    "name": "MM-test-section",
+    "settings": [{
+        "type":"text",
+        "id":"mm-heading",
+        "label":"Heading"
+     },{
+        "type":"richtext",
+        "label":"Text",
+        "id":"mm-textcontent"
+     },{
+        "type":"text",
+        "id": "mm-button-text",
+        "label":"Button Text"
+     },{
+        "type":"url",
+        "id": "mm-button-url",
+        "label":"Button URL"
+     },{
+        "type":"image_picker",
+        "id":"mm-image",
+        "label":"Image"
+     }],
+     "blocks":[{
+        "type":"subheading",
+        "name":"Sub Heading",
+        "limit": 1,
+        "settings":[{
+            "type":"text",
+            "id":"mm-subheading",
+            "label":"Sub Heading"
+        }]
+     }],
+    "presets": [{
+        "name": "MM Test Section"
+    }]
+}
+{% endschema %}

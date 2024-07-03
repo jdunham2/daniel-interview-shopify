@@ -148,12 +148,33 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "mm_test_section_BpQfyA": {
+      "type": "MM-test-section",
+      "blocks": {
+        "subheading_XK6zRR": {
+          "type": "subheading",
+          "settings": {
+            "mm-subheading": "value"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_XK6zRR"
+      ],
+      "settings": {
+        "mm-heading": "",
+        "mm-textcontent": "",
+        "mm-button-text": "",
+        "mm-button-url": ""
+      }
     }
   },
   "order": [
     "image_banner",
     "rich_text_GNFTJ8",
     "featured_collection",
-    "collection_list_FXHHg6"
+    "collection_list_FXHHg6",
+    "mm_test_section_BpQfyA"
   ]
 }
